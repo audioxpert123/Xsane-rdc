@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Raid Calculator</title>
+    <style>
+        body { background: #1a1a1a; color: #fff; font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .card { background: #252525; padding: 25px; border-radius: 12px; width: 350px; border: 1px solid #444; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        select { width: 100%; padding: 12px; margin: 15px 0; background: #333; color: white; border: 1px solid #555; border-radius: 6px; }
+        button { width: 100%; padding: 12px; background: #ff9500; border: none; border-radius: 6px; color: black; font-weight: bold; cursor: pointer; }
+        .result-area { margin-top: 20px; padding: 15px; background: #111; border-radius: 8px; border-left: 4px solid #ff9500; display: none; }
+        .item-row { margin: 5px 0; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Rust Raid Calc</h2>
+    <select id="door">
+        <option value="wood">Wood Door (200 HP)</option>
+        <option value="sheet">Sheet Metal Door (250 HP)</option>
+        <option value="garage">Garage Door (400 HP)</option>
+        <option value="armored">Armored Door (800 HP)</option>
+    </select>
+    <button onclick="calc()">Calculate Best Option</button>
+
+    <div id="res" class="result-area">
+        <div style="font-size: 0.9em; opacity: 0.7;">Recommended:</div>
+        <div id="output" style="margin-top: 10px;"></div>
+    </div>
+</div>
+
+<script>
+function calc() {
+    const door = document.getElementById('door').value;
+    const out = document.getElementById('output');
+    document.getElementById('res').style.display = 'block';
+    
+    let items = {};
+    if (door === 'wood') items = { "🔥 Molotov": 2 };
+    else if (door === 'sheet') items = { "🚀 Rocket": 1, "⚡ Explo Ammo": 13 };
+    else if (door === 'garage') items = { "💣 C4": 1, "⚡ Explo Ammo": 15 };
+    else if (door === 'armored') items = { "💣 C4": 2, "⚡ Explo Ammo": 31 };
+
+    out.innerHTML = Object.entries(items)
+        .map(([name, qty]) => `<div class="item-row">${name} x${qty}</div>`)
+        .join('');
+}
+</script>
+</body>
+</html>
+
