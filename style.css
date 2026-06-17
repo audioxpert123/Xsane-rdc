@@ -166,6 +166,7 @@ h2{
 
 .structure-mini{
     position:relative;
+    display:inline-block;
     text-align:center;
 }
 
