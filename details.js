@@ -20,13 +20,13 @@ alt="${structure.name}">
 
 <h1>${structure.name}</h1>
 
-<p>HP: 200</p>
+<p class="hp">HP: 200</p>
 
 <h2>Recommended</h2>
 
-<div class="method-box">
+<div class="summary-box">
 
-<p>Total:</p>
+<span>Total:</span>
 
 <div class="raid-item">
 🧨 x2
@@ -38,15 +38,28 @@ alt="${structure.name}">
 
 </div>
 
-<h2>Best Option</h2>
+<div class="best-box">
 
-<div class="method-box">
+<div class="structure-mini">
+
+<img class="mini-structure"
+src="${structure.image}">
+
+<span>x1</span>
+
+</div>
+
+<div class="best-text">
+
+Best<br>Option:
+
+</div>
 
 <div class="raid-item">
 🧨 x2
 </div>
 
-+
+<span class="plus">+</span>
 
 <div class="raid-item">
 💥 x31
