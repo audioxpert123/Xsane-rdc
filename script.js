@@ -19,6 +19,17 @@ function createCard(item) {
         <div class="card-name">${item.name}</div>
     `;
 
+    card.addEventListener("click", () => {
+
+        localStorage.setItem(
+            "selectedStructure",
+            JSON.stringify(item)
+        );
+
+        window.location.href = "details.html";
+
+    });
+
     return card;
 }
 
