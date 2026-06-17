@@ -20,8 +20,6 @@ details.innerHTML = `
 HP: 200
 </div>
 
-<h2>Recommended</h2>
-
 <div class="best-box">
 
 <div class="structure-mini">
