@@ -14,10 +14,6 @@ details.innerHTML = `
 
 <div class="details-container">
 
-<img class="structure-image"
-src="${structure.image}"
-alt="${structure.name}">
-
 <h1>${structure.name}</h1>
 
 <p class="hp">HP: 200</p>
