@@ -12,13 +12,45 @@ document.getElementById(
 
 details.innerHTML = `
 
-<div class="card">
+<div class="details-container">
 
-<img src="${structure.image}" alt="${structure.name}">
+<img class="structure-image"
+src="${structure.image}"
+alt="${structure.name}">
 
-<div class="card-name">
+<h1>${structure.name}</h1>
 
-${structure.name}
+<p>HP: 200</p>
+
+<h2>Recommended</h2>
+
+<div class="method-box">
+
+<p>Total:</p>
+
+<div class="raid-item">
+🧨 x2
+</div>
+
+<div class="raid-item">
+💥 x31
+</div>
+
+</div>
+
+<h2>Best Option</h2>
+
+<div class="method-box">
+
+<div class="raid-item">
+🧨 x2
+</div>
+
++
+
+<div class="raid-item">
+💥 x31
+</div>
 
 </div>
 
