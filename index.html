@@ -6,65 +6,50 @@
     <title>Rust Raid Calc</title>
     <style>
         :root { --bg: #0f0f0f; --card: #1a1a1a; --accent: #ff9500; }
-        body { background: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        
-        .card { 
-            background: var(--card); 
-            padding: 12px; 
-            border-radius: 12px; 
-            text-align: center; 
-            border: 1px solid #333;
-            transition: 0.3s;
-        }
-        
-        .card img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
-        
-        /* Naam ke piche background */
-        .card p { 
-            background: #000; 
-            margin: 0; 
-            padding: 8px; 
-            border-radius: 6px; 
-            font-size: 0.85em; 
-            font-weight: 600; 
-            color: #ccc;
-        }
-        
-        #result-box { 
-            margin-top: 30px; 
-            padding: 20px; 
-            background: #1a1a1a; 
-            border-left: 4px solid var(--accent);
-            border-radius: 8px;
-        }
+        body { background: var(--bg); color: #fff; font-family: sans-serif; padding: 15px; }
+        #searchBar { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .card { background: var(--card); padding: 10px; border-radius: 10px; text-align: center; border: 1px solid #333; cursor: pointer; }
+        .card p { margin: 8px 0 0 0; padding: 6px; border-radius: 6px; background: #000; font-size: 0.8em; font-weight: bold; }
+        #result-box { margin-top: 25px; padding: 20px; background: #1a1a1a; border-left: 4px solid var(--accent); position: sticky; bottom: 10px; }
     </style>
 </head>
 <body>
 
-<h2 style="text-align: center; margin-bottom: 25px;">RAID CALCULATOR</h2>
+<input type="text" id="searchBar" placeholder="Search structures (e.g. wall, door)..." onkeyup="search()">
 
-<div class="grid">
-    <div class="card" onclick="update('Armored Door', '2 C4 / 4 Rockets')">
-        <img src="https://via.placeholder.com/150" alt="Door">
-        <p>Armored Door</p>
-    </div>
-    <div class="card" onclick="update('Garage Door', '1 C4 / 2 Rockets')">
-        <img src="https://via.placeholder.com/150" alt="Door">
-        <p>Garage Door</p>
-    </div>
+<div class="grid" id="container">
+    <div class="card" onclick="update('Armored Wall', '16 C4 / 32 Rockets')"><p>Armored Wall</p></div>
+    <div class="card" onclick="update('Metal Wall', '8 C4 / 15 Rockets')"><p>Metal Wall</p></div>
+    <div class="card" onclick="update('Stone Wall', '4 C4 / 8 Rockets')"><p>Stone Wall</p></div>
+    
+    <div class="card" onclick="update('Armored Door', '2 C4 / 4 Rockets')"><p>Armored Door</p></div>
+    <div class="card" onclick="update('Garage Door', '1 C4 / 2 Rockets')"><p>Garage Door</p></div>
+    <div class="card" onclick="update('Sheet Metal Door', '1 C4 / 2 Rockets')"><p>Sheet Door</p></div>
+    
+    <div class="card" onclick="update('High External Wall', '4 C4 / 8 Rockets')"><p>High Ext. Wall</p></div>
+    <div class="card" onclick="update('High Ext. Gate', '9 C4 / 18 Rockets')"><p>High Ext. Gate</p></div>
+    
+    <div class="card" onclick="update('Armored Floor/Found', '16 C4 / 32 Rockets')"><p>Armored Floor</p></div>
+    <div class="card" onclick="update('Metal Floor/Found', '8 C4 / 15 Rockets')"><p>Metal Floor</p></div>
+    <div class="card" onclick="update('Window Bars', '2 C4 / 4 Rockets')"><p>Window Bars</p></div>
+    <div class="card" onclick="update('Armored Roof', '16 C4 / 32 Rockets')"><p>Armored Roof</p></div>
 </div>
 
 <div id="result-box">
-    <h3 id="res-name" style="margin:0;">Select Item</h3>
-    <p id="res-cost" style="color: var(--accent); font-weight: bold; margin-top: 10px;"></p>
+    <h3 id="res-name" style="margin:0;">Select an item</h3>
+    <p id="res-cost" style="color: var(--accent); font-weight: bold;"></p>
 </div>
 
 <script>
-    function update(name, cost) {
-        document.getElementById('res-name').innerText = name;
-        document.getElementById('res-cost').innerText = cost;
+    function update(n, c) { document.getElementById('res-name').innerText = n; document.getElementById('res-cost').innerText = c; }
+    function search() {
+        let input = document.getElementById('searchBar').value.toLowerCase();
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            let p = cards[i].getElementsByTagName('p')[0];
+            cards[i].style.display = p.innerText.toLowerCase().includes(input) ? "" : "none";
+        }
     }
 </script>
 </body>
