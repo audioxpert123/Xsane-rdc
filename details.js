@@ -34,12 +34,6 @@ details.innerHTML = `
     🧨 x3
 </div>
 
-        <span class="plus">+</span>
-
-        <div class="raid-item">
-            💥 x31
-        </div>
-
     </div>
 
 </div>
