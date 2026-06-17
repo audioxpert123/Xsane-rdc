@@ -3,7 +3,7 @@ const structures = [
 {
 name:"Wooden Door",
 category:"doors",
-image:"images/wooden-door.webp"
+image:"images/wooden-door.png"
 },
 
 {
