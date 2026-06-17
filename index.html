@@ -1,59 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Rust Raid Calculator</title>
-    <style>
-        body { background: #121212; color: #fff; font-family: sans-serif; padding: 15px; }
-        select { width: 100%; padding: 12px; background: #222; color: white; border: 1px solid #444; border-radius: 6px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .card { background: #1a1a1a; padding: 10px; border-radius: 6px; border: 1px solid #333; text-align: center; }
-        h4 { margin-top: 20px; border-bottom: 2px solid #ff9500; padding-bottom: 5px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rust Mobile Raid Calculator</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h3>Structure Select Karo:</h3>
-<select id="s" onchange="calc()">
-    <option value="armored_wall">Armored Wall/Floor/Found</option>
-    <option value="metal_wall">Metal Wall/Floor/Found</option>
-    <option value="stone_wall">Stone Wall/Floor/Found</option>
-    <option value="armored_door">Armored Door</option>
-    <option value="garage_door">Garage Door</option>
-    <option value="sheet_door">Sheet Metal Door</option>
-    <option value="window_bars">Window Bars</option>
-    <option value="high_wall">High External Wall</option>
-</select>
+<header>
+    <h1>Rust Mobile Raid Calculator</h1>
 
-<div id="res"></div>
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search structure..."
+    >
+</header>
 
-<script>
-    // Latest Raid Costs (C4/Rocket/Satchel)
-    const data = {
-        "armored_wall": { name: "Armored (Wall/Floor/Found)", c4: 16, rocket: 32, satchel: 182 },
-        "metal_wall": { name: "Metal (Wall/Floor/Found)", c4: 8, rocket: 15, satchel: 46 },
-        "stone_wall": { name: "Stone (Wall/Floor/Found)", c4: 4, rocket: 8, satchel: 10 },
-        "armored_door": { name: "Armored Door", c4: 2, rocket: 4, satchel: 12 },
-        "garage_door": { name: "Garage Door", c4: 1, rocket: 2, satchel: 9 },
-        "sheet_door": { name: "Sheet Metal Door", c4: 1, rocket: 2, satchel: 4 },
-        "window_bars": { name: "Window Bars", c4: 2, rocket: 4, satchel: 5 },
-        "high_wall": { name: "High External Wall", c4: 4, rocket: 8, satchel: 18 }
-    };
+<main id="structuresContainer">
 
-    function calc() {
-        let key = document.getElementById('s').value;
-        let item = data[key];
-        document.getElementById('res').innerHTML = `
-            <div class="card">
-                <h4>${item.name}</h4>
-                <p>C4: <b>${item.c4}</b></p>
-                <p>Rockets: <b>${item.rocket}</b></p>
-                <p>Satchels: <b>${item.satchel}</b></p>
-            </div>
-        `;
-    }
-    // Load default
-    calc();
-</script>
+    <!-- Doors -->
+    <section>
+        <h2>Doors</h2>
+        <div class="grid" id="doors"></div>
+    </section>
+
+    <!-- Walls -->
+    <section>
+        <h2>Walls</h2>
+        <div class="grid" id="walls"></div>
+    </section>
+
+    <!-- Roofs -->
+    <section>
+        <h2>Roofs</h2>
+        <div class="grid" id="roofs"></div>
+    </section>
+
+    <!-- Foundations -->
+    <section>
+        <h2>Foundations</h2>
+        <div class="grid" id="foundations"></div>
+    </section>
+
+    <!-- Windows -->
+    <section>
+        <h2>Windows</h2>
+        <div class="grid" id="windows"></div>
+    </section>
+
+    <!-- Hatches -->
+    <section>
+        <h2>Hatches</h2>
+        <div class="grid" id="hatches"></div>
+    </section>
+
+    <!-- External Walls -->
+    <section>
+        <h2>External Walls & Gates</h2>
+        <div class="grid" id="external"></div>
+    </section>
+
+    <!-- Misc -->
+    <section>
+        <h2>Misc</h2>
+        <div class="grid" id="misc"></div>
+    </section>
+
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
