@@ -23,11 +23,9 @@ HP: 200
 <div class="best-box">
 
 <div class="structure-mini">
-
-<img class="mini-structure"
-src="${structure.image}">
-
-<span>x1</span>
+  <span class="qty-badge">x1</span>
+  <img class="mini-structure" src="${structure.image}">
+</div>
 
 </div>
 
