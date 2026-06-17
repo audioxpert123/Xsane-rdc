@@ -170,3 +170,18 @@ h2{
     font-size:24px;
     font-weight:bold;
 }
+
+.hp-badge{
+    width:120px;
+    margin:15px auto;
+    text-align:center;
+
+    background:#1a1d22;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    font-size:24px;
+    font-weight:bold;
+}
