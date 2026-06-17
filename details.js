@@ -24,6 +24,10 @@ HP: 200
 
 <div class="best-box">
 
+<h3 class="recommended-title">
+🏆 Recommended Raid Method
+</h3>
+
 <div class="structure-mini">
 
 <img class="mini-structure"
@@ -34,8 +38,6 @@ src="${structure.image}">
 </div>
 
 <div class="best-text">
-
-🏆 Recommended<br>Raid Method
 
 </div>
 
