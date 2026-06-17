@@ -14,36 +14,33 @@ details.innerHTML = `
 
 <div class="details-container">
 
-<h1>${structure.name}</h1>
+    <h1>${structure.name}</h1>
 
-<div class="hp-badge">
-HP: 200
-</div>
+    <div class="hp-badge">
+        HP: 200
+    </div>
 
-<div class="best-box">
+    <div class="best-box">
 
-<div class="structure-mini">
-  <span class="qty-badge">x1</span>
-  <img class="mini-structure" src="${structure.image}">
-</div>
+        <div class="structure-mini">
+            <span class="qty-badge">x1</span>
 
-</div>
+            <img
+            class="mini-structure"
+            src="${structure.image}">
+        </div>
 
-<div class="best-text">
+        <div class="raid-item">
+            🧨 x2
+        </div>
 
-</div>
+        <span class="plus">+</span>
 
-<div class="raid-item">
-🧨 x2
-</div>
+        <div class="raid-item">
+            💥 x31
+        </div>
 
-<span class="plus">+</span>
-
-<div class="raid-item">
-💥 x31
-</div>
-
-</div>
+    </div>
 
 </div>
 
