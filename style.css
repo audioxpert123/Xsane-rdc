@@ -183,6 +183,30 @@ h2{
     text-shadow:2px 2px 4px black;
 }
 
+.structure-mini{
+    position:relative;
+    text-align:center;
+}
+
+.qty-badge{
+    position:absolute;
+    top:-8px;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:white;
+    color:black;
+
+    padding:2px 8px;
+
+    border-radius:8px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    z-index:2;
+}
+
 .mini-structure{
     width:70px;
     height:70px;
