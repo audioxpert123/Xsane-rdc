@@ -159,30 +159,6 @@ h2{
     margin-bottom:20px;
 }
 
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.structure-mini{
-    position:relative;
-    display:inline-block;
-    text-align:center;
-}
-
-.structure-mini span{
-    position:absolute;
-    top:-8px;
-    left:50%;
-    transform:translateX(-50%);
-
-    font-size:22px;
-    font-weight:bold;
-
-    color:white;
-
-    text-shadow:2px 2px 4px black;
-}
 
 .structure-mini{
     position:relative;
@@ -202,20 +178,11 @@ h2{
 
     font-size:14px;
     font-weight:bold;
-}
-
-    background:white;
-    color:black;
-
-    padding:2px 8px;
-
-    border-radius:8px;
-
-    font-size:18px;
-    font-weight:bold;
 
     z-index:2;
 }
+
+    
 
 .mini-structure{
     width:70px;
