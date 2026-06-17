@@ -2,55 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rust Raid Calc</title>
+    <title>Rust Raid Calculator</title>
     <style>
-        :root { --bg: #0f0f0f; --card: #1a1a1a; --accent: #ff9500; }
-        body { background: var(--bg); color: #fff; font-family: sans-serif; padding: 15px; }
-        #searchBar { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #333; background: #222; color: white; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-        .card { background: var(--card); padding: 10px; border-radius: 10px; text-align: center; border: 1px solid #333; cursor: pointer; }
-        .card p { margin: 8px 0 0 0; padding: 6px; border-radius: 6px; background: #000; font-size: 0.8em; font-weight: bold; }
-        #result-box { margin-top: 25px; padding: 20px; background: #1a1a1a; border-left: 4px solid var(--accent); position: sticky; bottom: 10px; }
+        body { background: #121212; color: #fff; font-family: sans-serif; padding: 15px; }
+        select { width: 100%; padding: 12px; background: #222; color: white; border: 1px solid #444; border-radius: 6px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .card { background: #1a1a1a; padding: 10px; border-radius: 6px; border: 1px solid #333; text-align: center; }
+        h4 { margin-top: 20px; border-bottom: 2px solid #ff9500; padding-bottom: 5px; }
     </style>
 </head>
 <body>
 
-<input type="text" id="searchBar" placeholder="Search structures (e.g. wall, door)..." onkeyup="search()">
+<h3>Structure Select Karo:</h3>
+<select id="s" onchange="calc()">
+    <option value="armored_wall">Armored Wall/Floor/Found</option>
+    <option value="metal_wall">Metal Wall/Floor/Found</option>
+    <option value="stone_wall">Stone Wall/Floor/Found</option>
+    <option value="armored_door">Armored Door</option>
+    <option value="garage_door">Garage Door</option>
+    <option value="sheet_door">Sheet Metal Door</option>
+    <option value="window_bars">Window Bars</option>
+    <option value="high_wall">High External Wall</option>
+</select>
 
-<div class="grid" id="container">
-    <div class="card" onclick="update('Armored Wall', '16 C4 / 32 Rockets')"><p>Armored Wall</p></div>
-    <div class="card" onclick="update('Metal Wall', '8 C4 / 15 Rockets')"><p>Metal Wall</p></div>
-    <div class="card" onclick="update('Stone Wall', '4 C4 / 8 Rockets')"><p>Stone Wall</p></div>
-    
-    <div class="card" onclick="update('Armored Door', '2 C4 / 4 Rockets')"><p>Armored Door</p></div>
-    <div class="card" onclick="update('Garage Door', '1 C4 / 2 Rockets')"><p>Garage Door</p></div>
-    <div class="card" onclick="update('Sheet Metal Door', '1 C4 / 2 Rockets')"><p>Sheet Door</p></div>
-    
-    <div class="card" onclick="update('High External Wall', '4 C4 / 8 Rockets')"><p>High Ext. Wall</p></div>
-    <div class="card" onclick="update('High Ext. Gate', '9 C4 / 18 Rockets')"><p>High Ext. Gate</p></div>
-    
-    <div class="card" onclick="update('Armored Floor/Found', '16 C4 / 32 Rockets')"><p>Armored Floor</p></div>
-    <div class="card" onclick="update('Metal Floor/Found', '8 C4 / 15 Rockets')"><p>Metal Floor</p></div>
-    <div class="card" onclick="update('Window Bars', '2 C4 / 4 Rockets')"><p>Window Bars</p></div>
-    <div class="card" onclick="update('Armored Roof', '16 C4 / 32 Rockets')"><p>Armored Roof</p></div>
-</div>
-
-<div id="result-box">
-    <h3 id="res-name" style="margin:0;">Select an item</h3>
-    <p id="res-cost" style="color: var(--accent); font-weight: bold;"></p>
-</div>
+<div id="res"></div>
 
 <script>
-    function update(n, c) { document.getElementById('res-name').innerText = n; document.getElementById('res-cost').innerText = c; }
-    function search() {
-        let input = document.getElementById('searchBar').value.toLowerCase();
-        let cards = document.getElementsByClassName('card');
-        for (let i = 0; i < cards.length; i++) {
-            let p = cards[i].getElementsByTagName('p')[0];
-            cards[i].style.display = p.innerText.toLowerCase().includes(input) ? "" : "none";
-        }
+    // Latest Raid Costs (C4/Rocket/Satchel)
+    const data = {
+        "armored_wall": { name: "Armored (Wall/Floor/Found)", c4: 16, rocket: 32, satchel: 182 },
+        "metal_wall": { name: "Metal (Wall/Floor/Found)", c4: 8, rocket: 15, satchel: 46 },
+        "stone_wall": { name: "Stone (Wall/Floor/Found)", c4: 4, rocket: 8, satchel: 10 },
+        "armored_door": { name: "Armored Door", c4: 2, rocket: 4, satchel: 12 },
+        "garage_door": { name: "Garage Door", c4: 1, rocket: 2, satchel: 9 },
+        "sheet_door": { name: "Sheet Metal Door", c4: 1, rocket: 2, satchel: 4 },
+        "window_bars": { name: "Window Bars", c4: 2, rocket: 4, satchel: 5 },
+        "high_wall": { name: "High External Wall", c4: 4, rocket: 8, satchel: 18 }
+    };
+
+    function calc() {
+        let key = document.getElementById('s').value;
+        let item = data[key];
+        document.getElementById('res').innerHTML = `
+            <div class="card">
+                <h4>${item.name}</h4>
+                <p>C4: <b>${item.c4}</b></p>
+                <p>Rockets: <b>${item.rocket}</b></p>
+                <p>Satchels: <b>${item.satchel}</b></p>
+            </div>
+        `;
     }
+    // Load default
+    calc();
 </script>
 </body>
 </html>
