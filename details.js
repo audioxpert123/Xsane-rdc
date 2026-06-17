@@ -35,7 +35,7 @@ src="${structure.image}">
 
 <div class="best-text">
 
-Best<br>Option:
+🏆 Recommended<br>Raid Method
 
 </div>
 
