@@ -22,12 +22,6 @@ HP: 200
 
 <h2>Recommended</h2>
 
-<div class="summary-box">
-
-<span>Total:</span>
-
-</div>
-
 <div class="best-box">
 
 <div class="structure-mini">
