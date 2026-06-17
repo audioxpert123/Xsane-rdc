@@ -31,8 +31,8 @@ details.innerHTML = `
         </div>
 
         <div class="raid-item">
-            🧨 x2
-        </div>
+    🧨 x3
+</div>
 
         <span class="plus">+</span>
 
