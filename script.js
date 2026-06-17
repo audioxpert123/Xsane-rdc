@@ -1,5 +1,13 @@
-const doorsContainer = document.getElementById("doors");
-const wallsContainer = document.getElementById("walls");
+const categories = {
+    doors: document.getElementById("doors"),
+    walls: document.getElementById("walls"),
+    roofs: document.getElementById("roofs"),
+    foundations: document.getElementById("foundations"),
+    windows: document.getElementById("windows"),
+    hatches: document.getElementById("hatches"),
+    external: document.getElementById("external"),
+    misc: document.getElementById("misc")
+};
 
 function createCard(item) {
 
@@ -16,14 +24,10 @@ function createCard(item) {
 
 structures.forEach(item => {
 
-    const card = createCard(item);
+    const container = categories[item.category];
 
-    if(item.category === "doors"){
-        doorsContainer.appendChild(card);
-    }
-
-    if(item.category === "walls"){
-        wallsContainer.appendChild(card);
+    if(container){
+        container.appendChild(createCard(item));
     }
 
 });
