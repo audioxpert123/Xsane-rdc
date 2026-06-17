@@ -16,7 +16,9 @@ details.innerHTML = `
 
 <h1>${structure.name}</h1>
 
-<p class="hp">HP: 200</p>
+<div class="hp-badge">
+HP: 200
+</div>
 
 <h2>Recommended</h2>
 
