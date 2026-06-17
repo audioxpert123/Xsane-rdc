@@ -26,14 +26,6 @@ HP: 200
 
 <span>Total:</span>
 
-<div class="raid-item">
-🧨 x2
-</div>
-
-<div class="raid-item">
-💥 x31
-</div>
-
 </div>
 
 <div class="best-box">
