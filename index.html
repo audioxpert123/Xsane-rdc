@@ -3,51 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rust Raid Calculator</title>
+    <title>Rust Raid Calc</title>
     <style>
-        body { background: #1a1a1a; color: #fff; font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
-        .card { background: #252525; padding: 25px; border-radius: 12px; width: 350px; border: 1px solid #444; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        select { width: 100%; padding: 12px; margin: 15px 0; background: #333; color: white; border: 1px solid #555; border-radius: 6px; }
-        button { width: 100%; padding: 12px; background: #ff9500; border: none; border-radius: 6px; color: black; font-weight: bold; cursor: pointer; }
-        .result-area { margin-top: 20px; padding: 15px; background: #111; border-radius: 8px; border-left: 4px solid #ff9500; display: none; }
-        .item-row { margin: 5px 0; font-size: 1.1em; }
+        :root { --bg: #0f0f0f; --card: #1a1a1a; --accent: #ff9500; }
+        body { background: var(--bg); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        
+        .card { 
+            background: var(--card); 
+            padding: 12px; 
+            border-radius: 12px; 
+            text-align: center; 
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+        
+        .card img { width: 100%; height: 100px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
+        
+        /* Naam ke piche background */
+        .card p { 
+            background: #000; 
+            margin: 0; 
+            padding: 8px; 
+            border-radius: 6px; 
+            font-size: 0.85em; 
+            font-weight: 600; 
+            color: #ccc;
+        }
+        
+        #result-box { 
+            margin-top: 30px; 
+            padding: 20px; 
+            background: #1a1a1a; 
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
 
-<div class="card">
-    <h2>Rust Raid Calc</h2>
-    <select id="door">
-        <option value="wood">Wood Door (200 HP)</option>
-        <option value="sheet">Sheet Metal Door (250 HP)</option>
-        <option value="garage">Garage Door (400 HP)</option>
-        <option value="armored">Armored Door (800 HP)</option>
-    </select>
-    <button onclick="calc()">Calculate Best Option</button>
+<h2 style="text-align: center; margin-bottom: 25px;">RAID CALCULATOR</h2>
 
-    <div id="res" class="result-area">
-        <div style="font-size: 0.9em; opacity: 0.7;">Recommended:</div>
-        <div id="output" style="margin-top: 10px;"></div>
+<div class="grid">
+    <div class="card" onclick="update('Armored Door', '2 C4 / 4 Rockets')">
+        <img src="https://via.placeholder.com/150" alt="Door">
+        <p>Armored Door</p>
+    </div>
+    <div class="card" onclick="update('Garage Door', '1 C4 / 2 Rockets')">
+        <img src="https://via.placeholder.com/150" alt="Door">
+        <p>Garage Door</p>
     </div>
 </div>
 
-<script>
-function calc() {
-    const door = document.getElementById('door').value;
-    const out = document.getElementById('output');
-    document.getElementById('res').style.display = 'block';
-    
-    let items = {};
-    if (door === 'wood') items = { "🔥 Molotov": 2 };
-    else if (door === 'sheet') items = { "🚀 Rocket": 1, "⚡ Explo Ammo": 13 };
-    else if (door === 'garage') items = { "💣 C4": 1, "⚡ Explo Ammo": 15 };
-    else if (door === 'armored') items = { "💣 C4": 2, "⚡ Explo Ammo": 31 };
+<div id="result-box">
+    <h3 id="res-name" style="margin:0;">Select Item</h3>
+    <p id="res-cost" style="color: var(--accent); font-weight: bold; margin-top: 10px;"></p>
+</div>
 
-    out.innerHTML = Object.entries(items)
-        .map(([name, qty]) => `<div class="item-row">${name} x${qty}</div>`)
-        .join('');
-}
+<script>
+    function update(name, cost) {
+        document.getElementById('res-name').innerText = name;
+        document.getElementById('res-cost').innerText = cost;
+    }
 </script>
 </body>
 </html>
-
