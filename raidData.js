@@ -1,25 +1,25 @@
 const raidData = {
   "Wooden Door": {
     hp: 200,
-    raidItem: "Molotov",
+    image: "molotov.webp",
     quantity: 3
   },
 
   "Sheet Metal Door": {
     hp: 250,
-    raidItem: "Satchel Charge",
+    image: "satchel.webp",
     quantity: 4
   },
 
   "Garage Door": {
     hp: 600,
-    raidItem: "Rocket",
+    image: "rocket.webp",
     quantity: 9
   },
 
   "Armored Door": {
     hp: 800,
-    raidItem: "Rocket",
+    image: "rocket.webp",
     quantity: 12
   }
 };
