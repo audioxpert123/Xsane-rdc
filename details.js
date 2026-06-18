@@ -31,7 +31,13 @@ details.innerHTML = `
         </div>
 
         <div class="raid-item">
-    🧨 x3
+
+    <img
+    class="raid-image"
+    src="images/molotov.webp">
+
+    <span>x3</span>
+
 </div>
 
     </div>
