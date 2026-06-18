@@ -5,6 +5,9 @@ localStorage.getItem(
 )
 );
 
+const raidInfo =
+raidData[structure.name];
+
 const details =
 document.getElementById(
 "details"
@@ -17,30 +20,32 @@ details.innerHTML = `
     <h1>${structure.name}</h1>
 
     <div class="hp-badge">
-        HP: 200
+        HP: ${raidInfo.hp}
     </div>
 
     <div class="best-box">
 
         <div class="raid-item">
 
-    <span class="qty-badge">x1</span>
+            <span class="qty-badge">x1</span>
 
-    <img
-    class="mini-structure"
-    src="${structure.image}">
+            <img
+            class="mini-structure"
+            src="${structure.image}">
 
-</div>
+        </div>
 
         <div class="raid-item">
 
-    <span class="raid-badge">x3</span>
+            <span class="raid-badge">
+                x${raidInfo.quantity}
+            </span>
 
-    <img
-    class="raid-image"
-    src="images/molotov.webp">
+            <img
+            class="raid-image"
+            src="images/molotov.webp">
 
-</div>
+        </div>
 
     </div>
 
