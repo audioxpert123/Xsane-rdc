@@ -32,11 +32,11 @@ details.innerHTML = `
 
         <div class="raid-item">
 
+    <span class="raid-badge">x3</span>
+
     <img
     class="raid-image"
     src="images/molotov.webp">
-
-    <span>x3</span>
 
 </div>
 
