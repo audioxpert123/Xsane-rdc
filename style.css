@@ -172,6 +172,7 @@ h2{
 .structure-mini{
     position:relative;
     text-align:center;
+    display:inline-block;
 }
 
 .qty-badge{
