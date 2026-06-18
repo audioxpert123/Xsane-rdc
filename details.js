@@ -22,12 +22,14 @@ details.innerHTML = `
 
     <div class="best-box">
 
-        <div class="structure-mini">
+        <div class="raid-item">
+
     <span class="qty-badge">x1</span>
 
     <img
     class="mini-structure"
     src="${structure.image}">
+
 </div>
 
         <div class="raid-item">
