@@ -251,8 +251,8 @@ h2{
 
 .raid-badge{
     position:absolute;
-    top:-8px;
-    left:-8px;
+    top:5px;
+    left:5px;
 
     background:white;
     color:black;
