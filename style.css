@@ -205,6 +205,12 @@ h2{
     background:#252932;
     border-radius:15px;
     padding:10px 15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
     font-size:24px;
     font-weight:bold;
 }
