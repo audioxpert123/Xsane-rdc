@@ -1,7 +1,7 @@
 const categories = {
     doors: document.getElementById("doors"),
     walls: document.getElementById("walls"),
-    roofs: document.getElementById("roofs"),
+    floors: document.getElementById("floors"),
     foundations: document.getElementById("foundations"),
     windows: document.getElementById("windows"),
     hatches: document.getElementById("hatches"),
