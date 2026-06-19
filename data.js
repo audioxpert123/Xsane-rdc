@@ -10,10 +10,10 @@ const structures = [
 {name:"Sheet Metal Wall",category:"walls",image:"images/sheet-metal-wall.webp"},
 {name:"Armored Wall",category:"walls",image:"images/armored-wall.webp"},
 
-{name:"Wooden Roof",category:"roofs",image:"images/wooden-roof.webp"},
-{name:"Stone Roof",category:"roofs",image:"images/stone-roof.webp"},
-{name:"Sheet Metal Roof",category:"roofs",image:"images/sheet-metal-roof.webp"},
-{name:"Armored Roof",category:"roofs",image:"images/armored-roof.webp"},
+{name:"Wooden Floor",category:"floors",image:"images/wooden-floor.webp"},
+{name:"Stone Floor",category:"floors",image:"images/stone-floor.webp"},
+{name:"Sheet Metal Floor",category:"floors",image:"images/sheet-metal-floor.webp"},
+{name:"Armored Floor",category:"floors",image:"images/armored-floor.webp"},
 
 {name:"Wooden Foundation",category:"foundations",image:"images/wooden-foundation.webp"},
 {name:"Stone Foundation",category:"foundations",image:"images/stone-foundation.webp"},
