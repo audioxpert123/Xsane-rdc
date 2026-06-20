@@ -266,3 +266,13 @@ h2{
 
     z-index:2;
 }
+
+.raid-arrow{
+    font-size:60px;
+    font-weight:bold;
+    color:#CD412B;
+
+    text-shadow:
+    0 0 10px rgba(205,65,43,0.8),
+    0 0 20px rgba(205,65,43,0.5);
+}
