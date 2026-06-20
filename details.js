@@ -48,12 +48,12 @@ details.innerHTML = `
         <div class="raid-item">
 
             <span class="raid-badge">
-                x${raidInfo.quantity}
+                x${raidInfo.bestMethod[0].quantity}
             </span>
 
             <img
             class="raid-image"
-            src="images/molotov.webp">
+            src="images/${raidInfo.bestMethod[0].image}">
 
         </div>
 
