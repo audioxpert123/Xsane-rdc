@@ -1,6 +1,9 @@
-const details =
-document.getElementById("details");
+const structure =
+JSON.parse(
+localStorage.getItem(
+"selectedStructure"
+)
+);
 
-details.innerHTML = `
-<h1>TEST</h1>
-`;
+document.getElementById("details").innerHTML =
+`<h1>${structure.name}</h1>`;
