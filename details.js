@@ -1,3 +1,12 @@
+alert("details js loaded");
+
+const structure =
+JSON.parse(
+localStorage.getItem(
+"selectedStructure"
+)
+);
+
 const structure =
 JSON.parse(
 localStorage.getItem(
