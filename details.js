@@ -1,12 +1,3 @@
-alert("details js loaded");
-
-const structure =
-JSON.parse(
-localStorage.getItem(
-"selectedStructure"
-)
-);
-
 const structure =
 JSON.parse(
 localStorage.getItem(
@@ -22,21 +13,6 @@ document.getElementById(
 "details"
 );
 
-const raidItemsHtml =
-raidInfo.bestMethod.map(item => `
-<div class="raid-item">
-
-    <span class="raid-badge">
-        x${item.quantity}
-    </span>
-
-    <img
-    class="raid-image"
-    src="images/${item.image}">
-
-</div>
-`).join("");
-
 details.innerHTML = `
 
 <div class="details-container">
@@ -49,27 +25,29 @@ details.innerHTML = `
 
     <div class="best-box">
 
-        <div class="target-box">
+        <div class="raid-item">
 
-            <div class="target-title">
-                TARGET
-            </div>
+            <span class="qty-badge">x1</span>
 
-            <div class="raid-item">
-
-                <span class="qty-badge">x1</span>
-
-                <img
-                class="mini-structure"
-                src="${structure.image}">
-
-            </div>
+            <img
+            class="mini-structure"
+            src="${structure.image}">
 
         </div>
 
         <div class="raid-arrow">»</div>
 
-        ${raidItemsHtml}
+        <div class="raid-item">
+
+            <span class="raid-badge">
+                x${raidInfo.bestMethod[0].quantity}
+            </span>
+
+            <img
+            class="raid-image"
+            src="images/${raidInfo.bestMethod[0].image}">
+
+        </div>
 
     </div>
 
