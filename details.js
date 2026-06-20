@@ -35,6 +35,8 @@ details.innerHTML = `
 
         </div>
 
+        <div class="raid-arrow">»</div>
+
         <div class="raid-item">
 
             <span class="raid-badge">
