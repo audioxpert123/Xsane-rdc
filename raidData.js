@@ -31,16 +31,18 @@ const raidData = {
   },
 
   "Armored Door": {
-  hp: 800,
+    hp: 800,
 
-  bestMethod: [
-    {
-      image: "c4.webp",
-      quantity: 1
-    },
-    {
-      image: "rocket.webp",
-      quantity: 2
-    }
-  ]
+    bestMethod: [
+      {
+        image: "c4.webp",
+        quantity: 1
+      },
+      {
+        image: "rocket.webp",
+        quantity: 2
+      }
+    ]
   }
+
+};
