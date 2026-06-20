@@ -25,13 +25,21 @@ details.innerHTML = `
 
     <div class="best-box">
 
-        <div class="raid-item">
+        <div class="target-box">
 
-            <span class="qty-badge">x1</span>
+            <div class="target-title">
+                TARGET
+            </div>
 
-            <img
-            class="mini-structure"
-            src="${structure.image}">
+            <div class="raid-item">
+
+                <span class="qty-badge">x1</span>
+
+                <img
+                class="mini-structure"
+                src="${structure.image}">
+
+            </div>
 
         </div>
 
