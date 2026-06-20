@@ -13,6 +13,21 @@ document.getElementById(
 "details"
 );
 
+const raidItemsHtml =
+raidInfo.bestMethod.map(item => `
+<div class="raid-item">
+
+    <span class="raid-badge">
+        x${item.quantity}
+    </span>
+
+    <img
+    class="raid-image"
+    src="images/${item.image}">
+
+</div>
+`).join("");
+
 details.innerHTML = `
 
 <div class="details-container">
@@ -45,17 +60,7 @@ details.innerHTML = `
 
         <div class="raid-arrow">»</div>
 
-        <div class="raid-item">
-
-            <span class="raid-badge">
-                x${raidInfo.bestMethod[0].quantity}
-            </span>
-
-            <img
-            class="raid-image"
-            src="images/${raidInfo.bestMethod[0].image}">
-
-        </div>
+        ${raidItemsHtml}
 
     </div>
 
