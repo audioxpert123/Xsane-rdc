@@ -276,3 +276,17 @@ h2{
     0 0 10px rgba(205,65,43,0.8),
     0 0 20px rgba(205,65,43,0.5);
 }
+
+.target-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.target-title{
+    color:#CD412B;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:8px;
+}
