@@ -23,7 +23,7 @@ const structures = [
 {name:"Wooden Window Bars",category:"windows",image:"images/wooden-window-bars.webp"},
 {name:"Metal Window Bars",category:"windows",image:"images/metal-window-bars.webp"},
 {name:"Reinforced Glass Window",category:"windows",image:"images/reinforced-glass-window.webp"},
-{name:"Armored Window",category:"windows",image:"images/armored-window.webp"},
+{name:"Strengthened Glass Window",category:"windows",image:"images/strengthened-glass-window.webp"},
 
 {name:"Wooden Hatch",category:"hatches",image:"images/wooden-hatch.webp"},
 {name:"Sheet Metal Hatch",category:"hatches",image:"images/sheet-metal-hatch.webp"},
