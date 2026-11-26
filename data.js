@@ -25,8 +25,6 @@ const structures = [
 {name:"Reinforced Glass Window",category:"windows",image:"images/reinforced-glass-window.webp"},
 {name:"Strengthened Glass Window",category:"windows",image:"images/strengthened-glass-window.webp"},
 
-{name:"Triangle Ladder Hatch",category:"hatches",image:"images/triangle-ladder-hatch.webp"},
-{name:"Armored Triangle Ladder Hatch",category:"hatches",image:"images/armored-triangle-ladder-hatch.webp"},
 {name:"Armored Ladder Hatch",category:"hatches",image:"images/armored-ladder-hatch.webp"},
 {name:"Ladder Hatch",category:"hatches",image:"images/ladder-hatch.webp"},
 
