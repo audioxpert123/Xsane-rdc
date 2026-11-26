@@ -25,9 +25,9 @@ const structures = [
 {name:"Reinforced Glass Window",category:"windows",image:"images/reinforced-glass-window.webp"},
 {name:"Strengthened Glass Window",category:"windows",image:"images/strengthened-glass-window.webp"},
 
-{name:"Wooden Hatch",category:"hatches",image:"images/wooden-hatch.webp"},
-{name:"Sheet Metal Hatch",category:"hatches",image:"images/sheet-metal-hatch.webp"},
-{name:"Armored Hatch",category:"hatches",image:"images/armored-hatch.webp"},
+{name:"Triangle Ladder Hatch",category:"hatches",image:"images/triangle-ladder-hatch.webp"},
+{name:"Armored Triangle Ladder Hatch",category:"hatches",image:"images/armored-triangle-ladder-hatch.webp"},
+{name:"Armored Ladder Hatch",category:"hatches",image:"images/armored-ladder-hatch.webp"},
 {name:"Ladder Hatch",category:"hatches",image:"images/ladder-hatch.webp"},
 
 {name:"High External Wooden Wall",category:"external",image:"images/high-external-wooden-wall.webp"},
@@ -38,6 +38,6 @@ const structures = [
 {name:"Shop Front",category:"misc",image:"images/shop-front.webp"},
 {name:"Prison Cell Wall",category:"misc",image:"images/prison-cell-wall.webp"},
 {name:"Prison Cell Gate",category:"misc",image:"images/prison-cell-gate.webp"},
-{name:"Reinforced Glass Wall",category:"misc",image:"images/reinforced-glass-wall.webp"}
+{name:"Metal Shop Front",category:"misc",image:"images/metal-shop-front.webp"}
 
 ];
