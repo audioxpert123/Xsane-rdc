@@ -444,3 +444,27 @@ a.card:focus-visible, .details-back:focus-visible { outline: 2px solid var(--was
 .raid-method-tile { flex-wrap: wrap; flex: 0 1 auto; text-align: center; }
 .raid-method-name { flex-basis: 100%; font-size: 13px; font-weight: normal; }
 .details-container .raid-unavailable { padding: 18px; margin-top: 15px; border: 1px solid var(--wasteland-border, #626b40); border-radius: 5px; background: var(--wasteland-panel, #252b1e); }
+
+/* Keep foundation thumbnails and captions aligned despite different source image proportions. */
+#foundations .card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+#foundations .card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.12 / 1;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+}
+#foundations .card-name {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(2 * 14px * 1.35 + 21px);
+    font-size: 14px;
+    line-height: 1.35;
+}
