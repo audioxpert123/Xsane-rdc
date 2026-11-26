@@ -14,7 +14,7 @@ function element(tag, className, text) {
 }
 const container = element("div", "details-container");
 const back = element("a", "details-back", "← All structures");
-back.href = "index.html";
+back.href = "raid.html";
 container.appendChild(back);
 details.appendChild(container);
 if (!structure) {

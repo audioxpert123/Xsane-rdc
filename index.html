@@ -3,78 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rust Mobile Raid Calculator</title>
-
-<link rel="stylesheet" href="style.css?v=foundation-6">
+<meta name="description" content="Browse Rust Mobile structures and available raid methods with XSANE's community raid calculator.">
+<meta name="theme-color" content="#121610">
+<title>Rust Mobile Tools | XSANE</title>
+<link rel="stylesheet" href="style.css?v=site-7">
 </head>
-
-<body>
-
-<header>
-    <h1>Rust Mobile Raid Calculator</h1>
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search structure..."
-    >
+<body class="site-body">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="site-brand" href="index.html"><span class="brand-mark" aria-hidden="true">X</span><span>XSANE<small>RUST MOBILE TOOLS</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="raid.html">Raid Calculator</a>
+      <a href="updates.html">Updates</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
 </header>
+<main class="site-main" id="main">
 
-<main id="structuresContainer">
-
-    <!-- Doors -->
-    <section>
-        <h2>Doors</h2>
-        <div class="grid" id="doors"></div>
-    </section>
-
-    <!-- Walls -->
-    <section>
-        <h2>Walls</h2>
-        <div class="grid" id="walls"></div>
-    </section>
-
-    <!-- Roofs -->
-    <section>
-        <h2>Floors</h2>
-        <div class="grid" id="floors"></div>
-    </section>
-
-    <!-- Foundations -->
-    <section>
-        <h2>Foundations</h2>
-        <div class="grid" id="foundations"></div>
-    </section>
-
-    <!-- Windows -->
-    <section>
-        <h2>Windows</h2>
-        <div class="grid" id="windows"></div>
-    </section>
-
-    <!-- Hatches -->
-    <section>
-        <h2>Hatches</h2>
-        <div class="grid" id="hatches"></div>
-    </section>
-
-    <!-- External Walls -->
-    <section>
-        <h2>External Walls & Gates</h2>
-        <div class="grid" id="external"></div>
-    </section>
-
-    <!-- Misc -->
-    <section>
-        <h2>Misc</h2>
-        <div class="grid" id="misc"></div>
-    </section>
-
+<section class="hero">
+ <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> UNOFFICIAL RUST MOBILE COMPANION</p>
+ <h1>PLAN YOUR<br><span>NEXT RAID.</span></h1>
+ <p class="hero-desc">Explore structures and check available raid methods before you head into the game.</p>
+ <a class="primary-link" href="raid.html">Open Raid Calculator <span aria-hidden="true">→</span></a>
+ <a class="secondary-link" href="about.html">About XSANE</a></div>
+ <div class="hero-art" aria-hidden="true"><div class="hero-grid"></div><span class="hero-art-label">STRUCTURE DATABASE // 01</span><div class="hero-items"><img src="images/wooden-door.png" alt="" width="160" height="160"><img src="images/armored-door.webp" alt="" width="210" height="210"><img src="images/garage-door.webp" alt="" width="160" height="160"></div><span class="hero-art-bottom">SURVIVAL • PLANNING • INTEL</span></div>
+</section>
+<div class="stats-strip"><div><strong>30</strong><span>Structures</span></div><div><strong>8</strong><span>Categories</span></div><div><strong>Free</strong><span>Access</span></div></div>
+<section class="home-section"><p class="eyebrow">TOOLS / 01</p><h2>Survival tools</h2>
+ <a class="tool-feature" href="raid.html"><span class="tool-icon" aria-hidden="true">▦</span><div><h3>Raid Calculator</h3><p>Browse structures, view HP and recommended methods wherever data is available.</p></div><span class="tool-arrow" aria-hidden="true">→</span></a>
+</section>
+<section class="home-section"><div class="section-top"><h2>Browse structures</h2><a href="raid.html">View all →</a></div>
+<div class="category-links"><a href="raid.html?category=doors">Doors<span aria-hidden="true">↗</span></a><a href="raid.html?category=walls">Walls<span aria-hidden="true">↗</span></a><a href="raid.html?category=floors">Floors<span aria-hidden="true">↗</span></a><a href="raid.html?category=foundations">Foundations<span aria-hidden="true">↗</span></a><a href="raid.html?category=windows">Windows<span aria-hidden="true">↗</span></a><a href="raid.html?category=hatches">Hatches<span aria-hidden="true">↗</span></a><a href="raid.html?category=external">External Walls & Gates<span aria-hidden="true">↗</span></a><a href="raid.html?category=misc">Misc<span aria-hidden="true">↗</span></a></div></section>
+<section class="home-section notice-panel"><div><p class="eyebrow">DATA COVERAGE</p><h3>Built for the community</h3><p>Structure images are available across the database. Raid method data is still being expanded; unavailable entries are clearly marked.</p></div><a class="secondary-link" href="updates.html">See updates →</a></section>
 </main>
-
-<script src="data.js?v=hatches-5"></script>
-<script src="script.js?v=raid-details-1"></script>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><a class="footer-brand" href="index.html">XSANE</a><p>Community-made tools for Rust Mobile players.</p></div>
+    <div class="footer-links"><a href="raid.html">Raid Calculator</a><a href="updates.html">Changelog</a><a href="about.html">About</a><a href="https://github.com/audioxpert123/Xsane-rdc">GitHub</a></div>
+    <p class="footer-note">Unofficial fan project. Not affiliated with the game developers. Game assets belong to their respective owners.</p>
+  </div>
+</footer>
+<script src="site.js?v=site-7"></script>
 
 </body>
 </html>

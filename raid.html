@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Search Rust Mobile structures by category and view available raid cost information.">
+<meta name="theme-color" content="#121610">
+<title>Raid Calculator | XSANE</title>
+<link rel="stylesheet" href="style.css?v=site-7">
+</head>
+<body class="site-body">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="site-bar">
+    <a class="site-brand" href="index.html"><span class="brand-mark" aria-hidden="true">X</span><span>XSANE<small>RUST MOBILE TOOLS</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span> Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="raid.html" aria-current="page">Raid Calculator</a>
+      <a href="updates.html">Updates</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main class="site-main" id="main">
+
+<div class="breadcrumbs"><a href="index.html">Home</a><span>/</span> Raid Calculator</div>
+<div class="page-intro"><p class="eyebrow">TOOLS / RAID INTEL</p><h1>Raid Calculator</h1><p>Select a structure to view its available raid information.</p></div>
+<div class="filter-panel"><label class="search-label" for="searchInput">Search structures</label><input type="search" id="searchInput" placeholder="Search structure..." autocomplete="off">
+<div class="category-filters" role="group" aria-label="Structure category"><button type="button" data-category="all" aria-pressed="true">All</button><button type="button" data-category="doors" aria-pressed="false">Doors</button><button type="button" data-category="walls" aria-pressed="false">Walls</button><button type="button" data-category="floors" aria-pressed="false">Floors</button><button type="button" data-category="foundations" aria-pressed="false">Foundations</button><button type="button" data-category="windows" aria-pressed="false">Windows</button><button type="button" data-category="hatches" aria-pressed="false">Hatches</button><button type="button" data-category="external" aria-pressed="false">External Walls & Gates</button><button type="button" data-category="misc" aria-pressed="false">Misc</button></div>
+<div class="filter-status"><span id="resultCount" aria-live="polite">30 structures</span><button id="resetFilters" type="button">Reset filters</button></div></div>
+<div id="structuresContainer"><section class="structure-section" data-section="doors"><h2>Doors</h2><div class="grid" id="doors"></div></section>
+<section class="structure-section" data-section="walls"><h2>Walls</h2><div class="grid" id="walls"></div></section>
+<section class="structure-section" data-section="floors"><h2>Floors</h2><div class="grid" id="floors"></div></section>
+<section class="structure-section" data-section="foundations"><h2>Foundations</h2><div class="grid" id="foundations"></div></section>
+<section class="structure-section" data-section="windows"><h2>Windows</h2><div class="grid" id="windows"></div></section>
+<section class="structure-section" data-section="hatches"><h2>Hatches</h2><div class="grid" id="hatches"></div></section>
+<section class="structure-section" data-section="external"><h2>External Walls & Gates</h2><div class="grid" id="external"></div></section>
+<section class="structure-section" data-section="misc"><h2>Misc</h2><div class="grid" id="misc"></div></section></div>
+<p id="emptyResults" class="notice-panel" hidden>No matching structures. Try another search or reset the filters.</p>
+<noscript>Please enable JavaScript to browse structures.</noscript>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><a class="footer-brand" href="index.html">XSANE</a><p>Community-made tools for Rust Mobile players.</p></div>
+    <div class="footer-links"><a href="raid.html">Raid Calculator</a><a href="updates.html">Changelog</a><a href="about.html">About</a><a href="https://github.com/audioxpert123/Xsane-rdc">GitHub</a></div>
+    <p class="footer-note">Unofficial fan project. Not affiliated with the game developers. Game assets belong to their respective owners.</p>
+  </div>
+</footer>
+<script src="site.js?v=site-7"></script>
+<script src="data.js?v=hatches-5"></script>
+<script src="script.js?v=site-7"></script>
+</body>
+</html>
