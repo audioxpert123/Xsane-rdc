@@ -435,3 +435,12 @@ h2::after {
         transform: none;
     }
 }
+
+a.card { display: block; color: inherit; text-decoration: none; }
+a.card:focus-visible, .details-back:focus-visible { outline: 2px solid var(--wasteland-accent, #d4d67d); outline-offset: 3px; }
+.details-back { display: inline-block; margin-bottom: 20px; color: var(--wasteland-accent, #d4d67d); text-decoration: none; font-weight: bold; }
+.details-container { max-width: 720px; margin: 0 auto; padding: 10px 0 20px; }
+.raid-method-list { flex-wrap: wrap; }
+.raid-method-tile { flex-wrap: wrap; flex: 0 1 auto; text-align: center; }
+.raid-method-name { flex-basis: 100%; font-size: 13px; font-weight: normal; }
+.details-container .raid-unavailable { padding: 18px; margin-top: 15px; border: 1px solid var(--wasteland-border, #626b40); border-radius: 5px; background: var(--wasteland-panel, #252b1e); }

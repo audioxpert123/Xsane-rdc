@@ -11,24 +11,15 @@ const categories = {
 
 function createCard(item) {
 
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     card.className = "card";
+    card.href = "details.html?structure=" + encodeURIComponent(item.name);
 
     card.innerHTML = `
         <img src="${item.image}" alt="${item.name}">
         <div class="card-name">${item.name}</div>
     `;
 
-    card.addEventListener("click", () => {
-
-        localStorage.setItem(
-            "selectedStructure",
-            JSON.stringify(item)
-        );
-
-        window.location.href = "details.html";
-
-    });
 
     return card;
 }
